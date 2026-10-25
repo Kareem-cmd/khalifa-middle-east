@@ -1,0 +1,3874 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خليفة الشرق الأوسط — أبواب وشترات احترافية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preload" as="image" href="Image/hero-aluminum-facade.webp">
+<link rel="preload" as="image" href="Image/logo.webp">
+
+<style>
+/* =============================================
+   CSS VARIABLES & RESET
+   ============================================= */
+:root {
+  --blue-dark:    #0D3B6E;
+  --blue-main:    #1B6CB5;
+  --blue-mid:     #2580D0;
+  --blue-light:   #3A9BE8;
+  --blue-glow:    #4AAFFF;
+  --white:        #FFFFFF;
+  --off-white:    #F4F7FC;
+  --light-gray:   #E8EDF5;
+  --mid-gray:     #8FA3BF;
+  --text-dark:    #0A1628;
+  --text-body:    #2C3E55;
+  --text-muted:   #5A7089;
+  --dark-bg:      #0A1628;
+  --dark-card:    #111D2E;
+  --dark-border:  #1E3350;
+  --gold:         #D4A842;
+  --gold-light:   #F0C860;
+  --success:      #25D366;
+
+  --radius-sm:    6px;
+  --radius-md:    12px;
+  --radius-lg:    20px;
+  --radius-xl:    32px;
+  --radius-pill:  100px;
+
+  --shadow-sm:    0 2px 12px rgba(27,108,181,0.10);
+  --shadow-md:    0 8px 32px rgba(27,108,181,0.18);
+  --shadow-lg:    0 20px 60px rgba(27,108,181,0.25);
+  --shadow-dark:  0 4px 24px rgba(0,0,0,0.4);
+
+  --transition:   all 0.35s cubic-bezier(0.4,0,0.2,1);
+  --font-main:    'Cairo', sans-serif;
+  --font-alt:     'Tajawal', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-body);
+  background: var(--white);
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* =============================================
+   UTILITIES
+   ============================================= */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(27,108,181,0.08);
+  border: 1px solid rgba(27,108,181,0.2);
+  color: var(--blue-main);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.section-title span { color: var(--blue-main); }
+
+.section-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-header .section-sub {
+  margin: 0 auto;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue-main);
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover::before { opacity: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--blue-main);
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 30px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--blue-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background: var(--blue-main);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  color: var(--blue-dark);
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-white:hover {
+  background: var(--off-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* =============================================
+   SCROLL ANIMATIONS
+   ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
+              transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1),
+              transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1),
+              transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+/* =============================================
+   1. NAVBAR
+   ============================================= */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(27,108,181,0.08);
+  transition: all 0.4s ease;
+}
+
+#navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(27,108,181,0.12);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 20px;
+}
+
+.navbar-logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-logo-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo-placeholder .logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--blue-main);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+.navbar-logo-placeholder .logo-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.navbar-logo-placeholder .logo-text span {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-body);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.navbar-nav a:hover,
+.navbar-nav a.active {
+  color: var(--blue-main);
+  background: rgba(27,108,181,0.06);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  color: var(--text-body);
+}
+
+.dropdown-menu a i {
+  width: 28px;
+  height: 28px;
+  background: rgba(27,108,181,0.08);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--blue-main);
+  flex-shrink: 0;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(27,108,181,0.06);
+  color: var(--blue-main);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-actions .btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--success);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+}
+
+.navbar-actions .btn-wa:hover {
+  background: #1da851;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+}
+
+.navbar-actions .btn-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue-main);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+}
+
+.navbar-actions .btn-quote:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  background: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile nav overlay */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,22,40,0.97);
+  z-index: 999;
+  flex-direction: column;
+  padding: 100px 32px 40px;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.mobile-nav.open { display: flex; }
+
+.mobile-nav a {
+  display: block;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.2s;
+}
+
+.mobile-nav a:hover { color: var(--blue-light); }
+
+.mobile-nav-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* =============================================
+   2. HERO SECTION
+   ============================================= */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--dark-bg);
+  padding-top: 72px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* IMAGE PROMPT FOR HERO:
+   "Professional industrial aluminum roller shutters and automated gates installation, 
+   dramatic blue hour lighting, modern commercial building facade, Saudi Arabia urban 
+   architecture, steel security shutters partially open revealing interior light, 
+   cinematic wide angle shot, dark moody atmosphere with blue steel tones, 
+   high contrast professional photography, no people, ultra sharp detail, 
+   photorealistic --ar 16:9 --style raw"
+   → Place as hero background image: object-fit: cover, full section
+*/
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.3;
+  filter: saturate(0.7) brightness(0.5);
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10,22,40,0.95) 0%,
+    rgba(13,59,110,0.85) 40%,
+    rgba(27,108,181,0.6) 70%,
+    rgba(10,22,40,0.9) 100%
+  );
+}
+
+/* Animated shutter pattern */
+.hero-shutter-anim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shutter-slat {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(27,108,181,0.15), rgba(74,175,255,0.08), transparent);
+  animation: shutterScan 8s linear infinite;
+}
+
+.shutter-slat:nth-child(1) { top: 15%; animation-delay: 0s; }
+.shutter-slat:nth-child(2) { top: 30%; animation-delay: 1.2s; }
+.shutter-slat:nth-child(3) { top: 45%; animation-delay: 2.4s; }
+.shutter-slat:nth-child(4) { top: 60%; animation-delay: 3.6s; }
+.shutter-slat:nth-child(5) { top: 75%; animation-delay: 4.8s; }
+
+@keyframes shutterScan {
+  0%   { opacity: 0; transform: scaleX(0); transform-origin: right; }
+  20%  { opacity: 1; transform: scaleX(1); transform-origin: right; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Geometric accent */
+.hero-geo {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27,108,181,0.12) 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 1;
+  animation: geoFloat 12s ease-in-out infinite;
+}
+
+.hero-geo-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,175,255,0.08) 0%, transparent 70%);
+  bottom: -80px;
+  right: 10%;
+  z-index: 1;
+  animation: geoFloat 10s ease-in-out infinite reverse;
+}
+
+@keyframes geoFloat {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50%       { transform: translate(20px, -30px) scale(1.05); }
+}
+
+/* Rolling door animation on right side */
+.hero-door-anim {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 320px;
+  z-index: 2;
+  opacity: 0.15;
+}
+
+.door-frame {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(74,175,255,0.5);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.door-slats-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  animation: doorOpen 6s ease-in-out infinite;
+}
+
+@keyframes doorOpen {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-85%); }
+  60%  { transform: translateY(-85%); }
+  100% { transform: translateY(0); }
+}
+
+.door-slat-bar {
+  height: 16px;
+  background: linear-gradient(180deg, rgba(74,175,255,0.6), rgba(27,108,181,0.4));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: 60px 0;
+}
+
+.hero-text { }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(27,108,181,0.15);
+  border: 1px solid rgba(74,175,255,0.3);
+  color: var(--blue-glow);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--blue-glow);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.9s ease 0.2s both;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--blue-light), var(--blue-glow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.hero-title .stroke-text {
+  -webkit-text-stroke: 1.5px rgba(74,175,255,0.5);
+  color: transparent;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 500px;
+  animation: fadeInUp 0.9s ease 0.35s both;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.9s ease 0.5s both;
+}
+
+.hero-actions .btn-wa-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--success);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+}
+
+.hero-actions .btn-wa-hero:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+}
+
+/* Trust bar */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 44px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  animation: fadeInUp 0.9s ease 0.65s both;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trust-num {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.trust-num span { color: var(--blue-glow); }
+
+.trust-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* Hero right - image card */
+.hero-visual {
+  position: relative;
+  animation: fadeInRight 1s ease 0.3s both;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-img-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(74,175,255,0.15);
+}
+
+/* IMAGE PROMPT FOR HERO CARD:
+   "Ultra-modern automatic sliding door system installed in luxury commercial building,
+   aluminum frame with blue steel finish, interior view with dramatic lighting,
+   professional installation quality, Saudi Arabia modern architecture, 
+   clean industrial aesthetic, photorealistic render, no people, 
+   sharp crisp details, cinematic lighting --ar 4:5 --style raw"
+   → Replace the placeholder below with the generated image
+*/
+
+.hero-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--dark-card) 0%, var(--blue-dark) 50%, var(--dark-card) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 18px,
+    rgba(27,108,181,0.06) 18px,
+    rgba(27,108,181,0.06) 20px
+  );
+}
+
+.hero-img-placeholder i {
+  font-size: 64px;
+  color: rgba(74,175,255,0.3);
+  position: relative;
+}
+
+.hero-img-placeholder p {
+  color: rgba(255,255,255,0.3);
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+}
+
+/* Floating badges on hero card */
+.hero-float-badge {
+  position: absolute;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-md);
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+.hero-float-badge.badge-1 {
+  bottom: 80px;
+  right: -20px;
+  animation-delay: 0s;
+}
+
+.hero-float-badge.badge-2 {
+  top: 60px;
+  right: -16px;
+  animation-delay: 1.5s;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.float-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--blue-main);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 16px;
+}
+
+.float-text { line-height: 1.3; }
+.float-title { font-size: 13px; font-weight: 700; color: var(--text-dark); }
+.float-sub   { font-size: 11px; color: var(--text-muted); }
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.3);
+  font-size: 11px;
+  animation: fadeInUp 1s ease 1.2s both;
+}
+
+.scroll-mouse {
+  width: 22px;
+  height: 34px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 11px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.scroll-dot {
+  width: 4px; height: 6px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 2px;
+  animation: scrollDot 2s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50%       { transform: translateY(6px); opacity: 0.8; }
+}
+
+/* =============================================
+   3. TRUST NUMBERS
+   ============================================= */
+#trust-numbers {
+  padding: 72px 0;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+#trust-numbers::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--light-gray), transparent);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--light-gray);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-card {
+  background: var(--white);
+  padding: 36px 24px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.trust-card:hover {
+  background: rgba(27,108,181,0.02);
+}
+
+.trust-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--blue-main);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+  border-radius: 2px;
+}
+
+.trust-card:hover::after {
+  transform: scaleX(1);
+}
+
+.trust-card-icon {
+  width: 52px; height: 52px;
+  background: rgba(27,108,181,0.08);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--blue-main);
+  font-size: 22px;
+  transition: var(--transition);
+}
+
+.trust-card:hover .trust-card-icon {
+  background: var(--blue-main);
+  color: white;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.trust-card-num {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+  font-family: var(--font-alt);
+}
+
+.trust-card-num .plus {
+  font-size: 32px;
+  color: var(--blue-main);
+}
+
+.trust-card-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Counter animation */
+.counter { display: inline-block; }
+
+/* =============================================
+   4. SERVICES SECTION
+   ============================================= */
+#services {
+  padding: 100px 0;
+  background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+#services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--light-gray) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  cursor: pointer;
+  group: true;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(27,108,181,0.2);
+}
+
+.service-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+/* IMAGE PROMPTS FOR SERVICE CARDS:
+   1. الأبواب الأوتوماتيكية:
+      "Modern automatic sliding aluminum door system in commercial building entrance,
+      blue steel frame, Saudi Arabia, photorealistic, no people, sharp detail, 
+      industrial clean look --ar 4:3"
+   
+   2. الشاش الفولاذي (Rolling Shutter):
+      "Industrial metal roller shutter door partially open on commercial shop,
+      corrugated steel slats, blue tinted lighting, clean professional installation,
+      photorealistic --ar 4:3"
+   
+   3. الشاش المتدرج:
+      "Perforated aluminum roller shutter on storefront allowing light through,
+      modern design, commercial setting, blue steel tone, professional quality --ar 4:3"
+   
+   4. شباك شتر:
+      "Aluminum window shutters on modern residential building, white and blue tones,
+      clean architectural photography, Saudi Arabia style --ar 4:3"
+   
+   5. مانع الطريق (Road Blocker):
+      "Hydraulic road blocker security bollard system at building entrance gate,
+      heavy duty steel, blue and gray tones, professional security installation --ar 4:3"
+   
+   6. حاجز (Barrier):
+      "Automatic parking barrier gate system at commercial building, 
+      aluminum arm, modern design, blue and white color scheme, 
+      professional quality photorealistic --ar 4:3"
+   
+   All prompts → Place in order in the 6 service cards below
+*/
+
+.service-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.service-card:hover .service-img-placeholder {
+  transform: scale(1.05);
+}
+
+.service-img-placeholder .ph-icon {
+  font-size: 48px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.6;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .ph-icon {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* Individual service card colors */
+.service-card:nth-child(1) .service-img-placeholder { background: linear-gradient(135deg, #0D3B6E, #1B6CB5); }
+.service-card:nth-child(2) .service-img-placeholder { background: linear-gradient(135deg, #0A2E52, #145FA3); }
+.service-card:nth-child(3) .service-img-placeholder { background: linear-gradient(135deg, #102847, #1A5898); }
+.service-card:nth-child(4) .service-img-placeholder { background: linear-gradient(135deg, #071E38, #124F8A); }
+.service-card:nth-child(5) .service-img-placeholder { background: linear-gradient(135deg, #0A2540, #164677); }
+.service-card:nth-child(6) .service-img-placeholder { background: linear-gradient(135deg, #081C33, #123D67); }
+
+/* Rolling shutter animated lines on placeholder */
+.service-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.04) 10px,
+    rgba(255,255,255,0.04) 12px
+  );
+  animation: shutterSlide 12s linear infinite;
+}
+
+@keyframes shutterSlide {
+  from { background-position: 0 0; }
+  to   { background-position: 0 120px; }
+}
+
+.service-img-placeholder .ph-icon {
+  color: rgba(255,255,255,0.5);
+}
+
+.service-body {
+  padding: 24px;
+}
+
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(27,108,181,0.06);
+  color: var(--blue-main);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.service-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue-main);
+  font-size: 14px;
+  font-weight: 700;
+  transition: gap 0.3s ease;
+}
+
+.service-link:hover { gap: 10px; }
+
+.service-link i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover i { transform: translateX(-4px); }
+
+/* =============================================
+   5. PORTFOLIO SECTION
+   ============================================= */
+#portfolio {
+  padding: 100px 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.portfolio-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--light-gray);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--blue-main);
+  border-color: var(--blue-main);
+  color: white;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.portfolio-grid .p-item:first-child {
+  grid-column: span 2;
+}
+
+.p-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--dark-bg);
+}
+
+.p-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.p-item:hover::after { opacity: 1; }
+
+/* IMAGE PROMPTS FOR PORTFOLIO:
+   1. Large Featured (span 2):
+      "Before and after split image of professional automatic rolling shutter door 
+      installation in Saudi Arabia commercial building, left side old manual door,
+      right side new modern aluminum automatic shutter, dramatic lighting, 
+      photorealistic, wide angle --ar 2:1"
+   
+   2. "Completed aluminum automatic gate installation at residential compound,
+      night photography with blue LED accent lighting, modern design,
+      Saudi Arabia, photorealistic --ar 1:1"
+   
+   3. "Industrial warehouse with heavy-duty metal roller shutters fully installed,
+      worker safety inspection, professional installation team,
+      clean modern facility --ar 1:1"
+   
+   4. "Commercial shopping mall automated entrance sliding doors,
+      glass and aluminum frame, people entering blurred motion,
+      Saudi Arabia setting --ar 1:1"
+   
+   5. "Security road blocker installation at government building entrance,
+      heavy steel hydraulic system, professional military-grade installation --ar 1:1"
+   
+   All → Place in portfolio grid items in order
+*/
+
+.p-img-placeholder {
+  width: 100%;
+  background: linear-gradient(135deg, var(--dark-card), var(--blue-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.p-item:first-child .p-img-placeholder { aspect-ratio: 2/1; }
+.p-item:not(:first-child) .p-img-placeholder { aspect-ratio: 1/1; }
+
+.p-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent, transparent 10px,
+    rgba(27,108,181,0.05) 10px, rgba(27,108,181,0.05) 12px
+  );
+}
+
+.p-img-placeholder i {
+  font-size: 40px;
+  color: rgba(255,255,255,0.15);
+  position: relative;
+}
+
+.p-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.p-item:hover .p-overlay { opacity: 1; }
+
+.p-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.p-cat {
+  font-size: 12px;
+  color: var(--blue-glow);
+  font-weight: 600;
+}
+
+.p-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 52px; height: 52px;
+  background: rgba(27,108,181,0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.p-item:hover .p-play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* =============================================
+   6. WHY KHALIFA (نقاط التميز)
+   ============================================= */
+#why-us {
+  padding: 100px 0;
+  background: var(--dark-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background */
+#why-us::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(27,108,181,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 30%, rgba(13,59,110,0.1) 0%, transparent 70%);
+}
+
+/* Diagonal shutter lines */
+#why-us::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(27,108,181,0.015) 40px,
+    rgba(27,108,181,0.015) 42px
+  );
+}
+
+.why-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.why-visual {
+  position: relative;
+}
+
+/* IMAGE PROMPT FOR WHY-US:
+   "Professional team of uniformed technicians installing aluminum rolling shutter 
+   door on commercial building, wearing safety gear, Saudi Arabia setting,
+   blue and white uniforms with company branding, high quality professional photo,
+   golden hour lighting, no face clearly visible --ar 4:5"
+   → Place as the main image in why-us visual card
+*/
+
+.why-img-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(27,108,181,0.2), var(--shadow-dark);
+}
+
+.why-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, #0A1E38, #1B4B80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 20px,
+    rgba(27,108,181,0.06) 20px,
+    rgba(27,108,181,0.06) 22px
+  );
+}
+
+.why-img-placeholder i {
+  font-size: 64px;
+  color: rgba(74,175,255,0.2);
+  position: relative;
+}
+
+/* Floating stat card */
+.why-stat-card {
+  position: absolute;
+  bottom: -24px;
+  left: -24px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 200px;
+  animation: floatBadge 5s ease-in-out infinite;
+}
+
+.wsc-icon {
+  width: 48px; height: 48px;
+  background: var(--blue-main);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.wsc-text .num { font-size: 24px; font-weight: 900; color: var(--text-dark); }
+.wsc-text .lbl { font-size: 12px; color: var(--text-muted); }
+
+/* Decorative circles */
+.why-deco-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(27,108,181,0.15);
+  top: -30px; right: -30px;
+  width: 200px; height: 200px;
+  animation: rotateSlow 20s linear infinite;
+}
+
+.why-deco-ring-2 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(74,175,255,0.1);
+  top: -60px; right: -60px;
+  width: 280px; height: 280px;
+  animation: rotateSlow 30s linear infinite reverse;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.why-content { }
+
+.why-content .section-title { color: var(--white); }
+.why-content .section-title span { color: var(--blue-glow); }
+.why-content .section-sub { color: rgba(255,255,255,0.6); }
+
+.why-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.feature-card:hover {
+  background: rgba(27,108,181,0.1);
+  border-color: rgba(27,108,181,0.3);
+  transform: translateY(-3px);
+}
+
+.feature-card i {
+  font-size: 24px;
+  color: var(--blue-glow);
+  margin-bottom: 12px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover i { transform: scale(1.2) rotate(-5deg); }
+
+.feature-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+/* =============================================
+   7. COMPACT CONTENT SECTION (التزامنا بالتميز)
+   ============================================= */
+#commitment {
+  padding: 80px 0;
+  background: var(--off-white);
+  position: relative;
+}
+
+/* IMAGE PROMPT FOR COMMITMENT SECTION:
+   "Close-up detail shot of premium aluminum roller shutter mechanism, 
+   gear and spring system, silver and blue metallic finish, 
+   engineering precision, macro photography, dark background with dramatic lighting,
+   product photography style, no people --ar 16:9"
+   → Place as background image for this section (very low opacity overlay)
+*/
+
+.commitment-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.commitment-text .section-title { text-align: right; }
+.commitment-text .section-sub   { text-align: right; margin-top: 16px; }
+
+.commitment-points {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.cp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--light-gray);
+  transition: var(--transition);
+}
+
+.cp-item:hover {
+  border-color: var(--blue-main);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(-4px);
+}
+
+.cp-icon {
+  width: 40px; height: 40px;
+  background: rgba(27,108,181,0.08);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue-main);
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.cp-item:hover .cp-icon {
+  background: var(--blue-main);
+  color: white;
+}
+
+.cp-text h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.cp-text p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.commitment-visual {
+  position: relative;
+}
+
+/* IMAGE PROMPT FOR COMMITMENT VISUAL:
+   "Luxury residential villa in Saudi Arabia with premium automatic gate 
+   and matching aluminum window shutters, nighttime photography, 
+   blue architectural lighting, modern design, high end real estate photography --ar 3:4"
+   → Place in the commitment visual card
+*/
+
+.commitment-img {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.commitment-img-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-main));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.commitment-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 18px,
+    rgba(255,255,255,0.04) 18px, rgba(255,255,255,0.04) 20px
+  );
+}
+
+.commitment-img-placeholder i {
+  font-size: 64px;
+  color: rgba(255,255,255,0.2);
+  position: relative;
+}
+
+/* =============================================
+   8. CTA BANNER
+   ============================================= */
+#cta-banner {
+  padding: 80px 0;
+  background: var(--blue-main);
+  position: relative;
+  overflow: hidden;
+}
+
+#cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-main) 50%, var(--blue-mid) 100%);
+}
+
+/* Moving shutter animation */
+#cta-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 28px,
+    rgba(255,255,255,0.02) 28px, rgba(255,255,255,0.02) 30px
+  );
+  animation: shutterDrop 20s linear infinite;
+}
+
+@keyframes shutterDrop {
+  from { background-position: 0 0; }
+  to   { background-position: 0 200px; }
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-text h2 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.cta-text p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+.cta-text .free-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.btn-cta-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--success);
+  color: white;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+}
+
+.btn-cta-wa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+
+.btn-cta-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-cta-call:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-3px);
+}
+
+/* =============================================
+   9. REVIEWS
+   ============================================= */
+#reviews {
+  padding: 100px 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.reviews-track-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews-track-wrap::before,
+.reviews-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+}
+
+.reviews-track-wrap::before {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.reviews-track-wrap::after {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.reviews-track {
+  display: flex;
+  gap: 20px;
+  animation: autoScroll 35s linear infinite;
+  width: max-content;
+}
+
+.reviews-track:hover { animation-play-state: paused; }
+
+@keyframes autoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.review-card {
+  background: var(--off-white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  width: 320px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  background: white;
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27,108,181,0.15);
+  transform: translateY(-4px);
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 14px;
+}
+
+.review-stars i {
+  color: #FDB022;
+  font-size: 15px;
+}
+
+.review-text {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.review-avatar.a1 { background: linear-gradient(135deg, #1B6CB5, #3A9BE8); }
+.review-avatar.a2 { background: linear-gradient(135deg, #0D3B6E, #1B6CB5); }
+.review-avatar.a3 { background: linear-gradient(135deg, #25D366, #1da851); }
+.review-avatar.a4 { background: linear-gradient(135deg, #D4A842, #F0C860); }
+.review-avatar.a5 { background: linear-gradient(135deg, #E24B4A, #F09595); }
+.review-avatar.a6 { background: linear-gradient(135deg, #1B6CB5, #0D3B6E); }
+
+.review-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.review-location {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.review-google {
+  margin-right: auto;
+  color: var(--text-muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =============================================
+   10. FAQ
+   ============================================= */
+#faq {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+
+.faq-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.faq-aside .section-title { font-size: clamp(24px, 3vw, 36px); }
+.faq-aside .section-sub { margin-top: 12px; }
+
+.faq-contact-box {
+  margin-top: 32px;
+  background: var(--blue-main);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  color: white;
+}
+
+.faq-contact-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.faq-contact-box p {
+  font-size: 13px;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.faq-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+.faq-wa-btn:hover {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item.open {
+  border-color: var(--blue-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.faq-q-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.faq-arrow {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--off-white);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue-main);
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: transform 0.35s ease, background 0.3s ease;
+}
+
+.faq-item.open .faq-arrow {
+  transform: rotate(180deg);
+  background: var(--blue-main);
+  color: white;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.faq-answer-inner {
+  padding: 0 22px 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.faq-item.open .faq-answer { max-height: 300px; }
+
+/* More FAQs button */
+.faq-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--blue-main);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  border: 1.5px dashed rgba(27,108,181,0.3);
+}
+
+.faq-more-btn:hover {
+  background: rgba(27,108,181,0.04);
+  border-style: solid;
+}
+
+/* =============================================
+   11. CONTACT
+   ============================================= */
+#contact {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-size: clamp(24px,3.5vw,38px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  background: rgba(27,108,181,0.06);
+  transform: translateX(-4px);
+}
+
+.ci-icon {
+  width: 44px; height: 44px;
+  background: var(--blue-main);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ci-icon.green { background: var(--success); }
+
+.ci-text { }
+.ci-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+.ci-value { font-size: 15px; font-weight: 700; color: var(--text-dark); }
+
+.contact-form-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: var(--transition);
+  outline: none;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--blue-main);
+  box-shadow: 0 0 0 3px rgba(27,108,181,0.1);
+}
+
+.form-group textarea { min-height: 110px; }
+
+.form-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--blue-main);
+  color: white;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-submit:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =============================================
+   12. FOOTER
+   ============================================= */
+#footer {
+  background: var(--dark-bg);
+  padding: 72px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 40px,
+    rgba(27,108,181,0.015) 40px, rgba(27,108,181,0.015) 42px
+  );
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.footer-brand .logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-logo-icon {
+  width: 40px; height: 40px;
+  background: var(--blue-main);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 18px;
+}
+
+.footer-logo-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.footer-logo-text span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--dark-border);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 15px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.social-btn:hover {
+  background: var(--blue-main);
+  border-color: var(--blue-main);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-col ul li a::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--blue-main);
+  opacity: 0;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.footer-col ul li a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.footer-col ul li a:hover::before { opacity: 1; }
+
+.footer-map {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--dark-card);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dark-border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer-map:hover { border-color: var(--blue-main); }
+
+.footer-map i { font-size: 32px; color: rgba(255,255,255,0.2); }
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+  transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.6); }
+
+/* =============================================
+   FLOATING BUTTONS
+   ============================================= */
+.float-actions {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.float-wa {
+  width: 56px; height: 56px;
+  background: var(--success);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 26px;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  animation: waPop 3s ease-in-out infinite;
+}
+
+@keyframes waPop {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.07); }
+}
+
+.float-wa:hover {
+  transform: scale(1.12) !important;
+  box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+  animation: none;
+}
+
+.float-call {
+  width: 48px; height: 48px;
+  background: var(--blue-main);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 20px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.float-call:hover {
+  background: var(--blue-dark);
+  transform: scale(1.1);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-inner { grid-template-columns: 1fr; gap: 40px; }
+  .why-visual { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav, .navbar-actions .btn-quote { display: none; }
+  .hamburger { display: flex; }
+  .hero-inner { padding: 40px 0; }
+  .hero-title { font-size: 32px; }
+  .hero-trust { flex-wrap: wrap; gap: 16px; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid .p-item:first-child { grid-column: span 1; }
+  .p-item:first-child .p-img-placeholder { aspect-ratio: 16/9; }
+  .commitment-inner { grid-template-columns: 1fr; }
+  .commitment-visual { display: none; }
+  .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-inner { flex-direction: column; text-align: center; }
+  .why-features { grid-template-columns: 1fr; }
+}
+
+/* === Applied logo + dark mode polish === */
+.site-logo-img {
+  width: 78px;
+  height: 58px;
+  object-fit: contain;
+  padding: 7px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--dark-bg), var(--blue-dark));
+  box-shadow: var(--shadow-sm);
+}
+.footer-logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  padding: 7px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-main));
+  margin-left: 12px;
+}
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--off-white);
+  color: var(--blue-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.theme-toggle:hover { transform: translateY(-2px); color: var(--white); background: var(--blue-main); }
+.real-hero-img,
+.real-why-img,
+.real-commitment-img,
+.p-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.real-hero-img {
+  aspect-ratio: 4 / 5;
+}
+.service-img-placeholder {
+  padding: 0 !important;
+  background: var(--dark-bg) !important;
+}
+.service-img-placeholder::before {
+  display: none !important;
+}
+.service-img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.p-img-placeholder {
+  padding: 0 !important;
+}
+.why-img-card,
+.commitment-img {
+  overflow: hidden;
+}
+.real-why-img,
+.real-commitment-img {
+  aspect-ratio: 4 / 5;
+}
+body.dark-mode {
+  --white: #07131d;
+  --off-white: #0A1628;
+  --light-gray: #1E3350;
+  --text-dark: #F6FAFF;
+  --text-body: rgba(255,255,255,0.78);
+  --text-muted: rgba(255,255,255,0.58);
+  background: var(--dark-bg);
+  color: rgba(255,255,255,0.78);
+  color-scheme: dark;
+}
+body.dark-mode #services,
+body.dark-mode #portfolio,
+body.dark-mode #reviews,
+body.dark-mode #faq,
+body.dark-mode #contact {
+  background: var(--dark-bg) !important;
+}
+body.dark-mode #trust-numbers,
+body.dark-mode #commitment {
+  background: #08111E !important;
+}
+body.dark-mode #navbar,
+body.dark-mode .mobile-nav,
+body.dark-mode .trust-card,
+body.dark-mode .service-card,
+body.dark-mode .p-item,
+body.dark-mode .why-card,
+body.dark-mode .feature-card,
+body.dark-mode .review-card,
+body.dark-mode .faq-item,
+body.dark-mode .faq-contact-box,
+body.dark-mode .contact-form-card,
+body.dark-mode .contact-item,
+body.dark-mode .footer-map {
+  background: var(--dark-card) !important;
+  border-color: var(--dark-border) !important;
+}
+body.dark-mode .section-title,
+body.dark-mode .service-title,
+body.dark-mode .why-card h3,
+body.dark-mode .faq-question,
+body.dark-mode .contact-title,
+body.dark-mode .navbar-logo,
+body.dark-mode .navbar-nav a { color: var(--white) !important; }
+body.dark-mode .section-desc,
+body.dark-mode .section-sub,
+body.dark-mode .service-desc,
+body.dark-mode .why-card p,
+body.dark-mode .feature-card p,
+body.dark-mode .review-text,
+body.dark-mode .faq-answer,
+body.dark-mode .faq-answer-inner,
+body.dark-mode .contact-desc,
+body.dark-mode .contact-info p,
+body.dark-mode .ci-value { color: rgba(255,255,255,0.62) !important; }
+body.dark-mode .form-group label,
+body.dark-mode .ci-label,
+body.dark-mode .review-name,
+body.dark-mode .footer-logo-text {
+  color: var(--white) !important;
+}
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+  background: #07131D !important;
+  color: var(--white) !important;
+  border-color: var(--dark-border) !important;
+}
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+  color: rgba(255,255,255,0.38);
+}
+body.dark-mode .theme-toggle { background: var(--blue-main); color: var(--white); }
+.contact-map-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--light-gray);
+  cursor: pointer;
+}
+.p-item {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.p-item.is-hidden {
+  display: none;
+}
+.status-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 9999;
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 14px 18px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--success), #1da851);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: var(--transition);
+}
+.status-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .site-logo-img { width: 62px; height: 48px; }
+  .theme-toggle { width: 40px; height: 40px; }
+  .navbar-actions { gap: 8px; }
+  .contact-map-img { height: 180px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     FLOATING BUTTONS
+     ========================================== -->
+<div class="float-actions">
+  <a href="https://wa.me/966552543409" class="float-wa" target="_blank" title="واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+966552543409" class="float-call" title="اتصل بنا">
+    <i class="fas fa-phone"></i>
+  </a>
+</div>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">
+    <i class="fas fa-times"></i>
+  </button>
+  <a href="#hero">الصفحة الرئيسية</a>
+  <a href="#services">خدماتنا</a>
+  <a href="#portfolio">أعمالنا</a>
+  <a href="#why-us">لماذا خليفة؟</a>
+  <a href="#reviews">تقييمات العملاء</a>
+  <a href="#faq">الأسئلة الشائعة</a>
+  <a href="#contact">اتصل بنا</a>
+  <a href="https://wa.me/966552543409" style="color: #25D366; font-weight: 800; margin-top: 16px;">
+    <i class="fab fa-whatsapp" style="margin-left: 8px;"></i> تواصل واتساب
+  </a>
+</nav>
+
+<!-- ==========================================
+     1. NAVBAR
+     ========================================== -->
+<header id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="navbar-logo">
+        <!-- Replace with: <img src="Image/logo.webp" alt="خليفة الشرق الأوسط"> -->
+        <img class="site-logo-img" decoding="async" src="Image/logo.webp" alt="خليفة الشرق الأوسط">
+      </a>
+
+      <!-- Nav -->
+      <nav class="navbar-nav">
+        <a href="#hero">الرئيسية</a>
+        <div class="dropdown">
+          <a href="#services">خدماتنا <i class="fas fa-chevron-down" style="font-size:10px; margin-right:4px;"></i></a>
+          <div class="dropdown-menu">
+            <a href="#services"><i class="fas fa-door-open"></i> أبواب أوتوماتيكية</a>
+            <a href="#services"><i class="fas fa-grip-lines"></i> الشاش الفولاذية</a>
+            <a href="#services"><i class="fas fa-layer-group"></i> الشاش المتدرج</a>
+            <a href="#services"><i class="fas fa-window-maximize"></i> شباك شتر</a>
+            <a href="#services"><i class="fas fa-road-barrier"></i> مانع الطريق</a>
+            <a href="#services"><i class="fas fa-traffic-cone"></i> حاجز</a>
+          </div>
+        </div>
+        <a href="#portfolio">أعمالنا</a>
+        <a href="#why-us">لماذا خليفة؟</a>
+        <a href="#reviews">تقييمات</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="navbar-actions">
+        <a href="https://wa.me/966552543409" class="btn-wa" target="_blank">
+          <i class="fab fa-whatsapp"></i> واتساب
+        </a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="تبديل الوضع الداكن" aria-pressed="false"><i class="fas fa-moon"></i></button>
+        <a href="#contact" class="btn-quote">
+          <i class="fas fa-file-invoice"></i> طلب عرض سعر
+        </a>
+        <button class="hamburger" onclick="openMobileNav()" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================
+     2. HERO SECTION
+     ========================================== -->
+<section id="hero">
+  <div class="hero-bg">
+    <!-- 
+      REPLACE WITH IMAGE:
+      <img class="hero-bg-img" decoding="async" fetchpriority="high" src="Image/hero-aluminum-facade.webp" alt="">
+      Prompt: "Professional industrial aluminum roller shutters and automated gates 
+      installation, dramatic blue hour lighting, modern commercial building facade, 
+      Saudi Arabia urban architecture, steel security shutters, cinematic wide angle,
+      dark moody atmosphere with blue steel tones, no people --ar 16:9 --style raw"
+    -->
+    <div class="hero-bg-overlay"></div>
+  </div>
+
+  <!-- Animated shutter lines -->
+  <div class="hero-shutter-anim">
+    <div class="shutter-slat"></div>
+    <div class="shutter-slat"></div>
+    <div class="shutter-slat"></div>
+    <div class="shutter-slat"></div>
+    <div class="shutter-slat"></div>
+  </div>
+
+  <div class="hero-geo"></div>
+  <div class="hero-geo-2"></div>
+
+  <!-- Animated rolling door (decorative) -->
+  <div class="hero-door-anim">
+    <div class="door-frame">
+      <div class="door-slats-container">
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div><div class="door-slat-bar"></div>
+        <div class="door-slat-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <i class="fas fa-shield-halved"></i>
+            الرائد في المملكة العربية السعودية منذ 25 عاماً
+          </div>
+          <h1 class="hero-title">
+            قطاعات ألمنيوم
+            <span class="highlight">على أعلى مستوى</span>
+          </h1>
+          <p class="hero-desc">
+            من المطابخ للواجهات — نجهز لك كل أعمال الألمنيوم بجودة قوية وضمان متانة. 
+            خبرة تتجاوز 25 عاماً في المملكة العربية السعودية والشرق الأوسط.
+          </p>
+          <div class="hero-actions">
+            <a href="https://wa.me/966552543409" class="btn-wa-hero" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+              طلب عرض سعر
+            </a>
+            <a href="#services" class="btn-white">
+              <i class="fas fa-grid-2"></i>
+              خدماتنا
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <div class="trust-num"><span class="count-up" data-target="500">0</span><span>+</span></div>
+              <div class="trust-label">مشروع منجز</div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <div class="trust-num"><span class="count-up" data-target="25">0</span></div>
+              <div class="trust-label">سنة خبرة</div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <div class="trust-num"><span class="count-up" data-target="10">0</span></div>
+              <div class="trust-label">سنوات ضمان</div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <div class="trust-num"><span class="count-up" data-target="3">0</span></div>
+              <div class="trust-label">دول خدمة</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+          <div class="hero-img-card">
+            <img class="real-hero-img" decoding="async" fetchpriority="high" src="Image/hero-aluminum-facade.webp" alt="باب أوتوماتيكي احترافي">
+          </div>
+
+          <div class="hero-float-badge badge-1">
+            <div class="float-icon"><i class="fas fa-shield-check"></i></div>
+            <div class="float-text">
+              <div class="float-title">ضمان 10 سنوات</div>
+              <div class="float-sub">على جميع التركيبات</div>
+            </div>
+          </div>
+
+          <div class="hero-float-badge badge-2">
+            <div class="float-icon" style="background: var(--success);"><i class="fas fa-bolt"></i></div>
+            <div class="float-text">
+              <div class="float-title">تركيب خلال 6 أيام</div>
+              <div class="float-sub">سرعة واحترافية</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <span>اكتشف المزيد</span>
+  </div>
+</section>
+
+<!-- ==========================================
+     3. TRUST NUMBERS
+     ========================================== -->
+<section id="trust-numbers">
+  <div class="container">
+    <div class="trust-grid reveal">
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fas fa-trophy"></i></div>
+        <div class="trust-card-num">
+          <span class="count-up" data-target="500">0</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="trust-card-label">مشروع منجز</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fas fa-calendar-days"></i></div>
+        <div class="trust-card-num">
+          <span class="count-up" data-target="25">0</span>
+        </div>
+        <div class="trust-card-label">سنة خبرة</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="trust-card-num">
+          <span class="count-up" data-target="10">0</span>
+        </div>
+        <div class="trust-card-label">سنوات ضمان</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fas fa-globe"></i></div>
+        <div class="trust-card-num">
+          <span class="count-up" data-target="3">0</span>
+        </div>
+        <div class="trust-card-label">دول نخدمها</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     4. SERVICES
+     ========================================== -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-grid-2"></i> خدماتنا</span>
+      <h2 class="section-title">حلول متكاملة لكل <span>احتياجاتك</span></h2>
+      <p class="section-sub">من الأبواب الأوتوماتيكية إلى أنظمة الأمان — نقدم أفضل الحلول بأعلى معايير الجودة والاحترافية</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Service 1: أبواب أوتوماتيكية -->
+      <div class="service-card reveal delay-1">
+        <div class="service-img-placeholder">
+          <img class="service-img" loading="lazy" decoding="async" src="Image/service-garage-door.webp" alt="أبواب أوتوماتيكية">
+        </div>
+        <div class="service-body">
+          <span class="service-tag"><i class="fas fa-bolt"></i> الأكثر طلباً</span>
+          <h3 class="service-name">أبواب أوتوماتيكية</h3>
+          <p class="service-desc">أبواب انزلاقية وكراجات أوتوماتيكية بأحدث الأنظمة الإلكترونية. تشغيل سلس وأمان عالي.</p>
+          <a href="#contact" class="service-link">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 2: الشاش الفولاذية -->
+      <div class="service-card reveal delay-2">
+        <div class="service-img-placeholder">
+          <img class="service-img" loading="lazy" decoding="async" src="Image/service-rolling-door.webp" alt="الشاش الفولاذية">
+        </div>
+        <div class="service-body">
+          <span class="service-tag"><i class="fas fa-shield-halved"></i> حماية قصوى</span>
+          <h3 class="service-name">الشاش الفولاذية</h3>
+          <p class="service-desc">ستائر معدنية بالفولاذ المقوى للمحلات التجارية والمستودعات. متانة لا مثيل لها.</p>
+          <a href="#contact" class="service-link">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 3: الشاش المتدرج -->
+      <div class="service-card reveal delay-3">
+        <div class="service-img-placeholder">
+          <img class="service-img" loading="lazy" decoding="async" src="Image/service-polycarbonate.webp" alt="الشاش المتدرج">
+        </div>
+        <div class="service-body">
+          <span class="service-tag"><i class="fas fa-wind"></i> تهوية + أمان</span>
+          <h3 class="service-name">الشاش المتدرج</h3>
+          <p class="service-desc">شترات متدرجة تجمع بين الأمان والتهوية الطبيعية. مثالية للمداخل التجارية.</p>
+          <a href="#contact" class="service-link">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 4: شباك شتر -->
+      <div class="service-card reveal delay-4">
+        <div class="service-img-placeholder">
+          <img class="service-img" loading="lazy" decoding="async" src="Image/service-shutter-window.webp" alt="شباك شتر">
+        </div>
+        <div class="service-body">
+          <span class="service-tag"><i class="fas fa-home"></i> سكني وتجاري</span>
+          <h3 class="service-name">شباك شتر</h3>
+          <p class="service-desc">نوافذ شتر ألمنيوم بعزل حراري وصوتي ممتاز. تحمي خصوصيتك مع جماليات عصرية.</p>
+          <a href="#contact" class="service-link">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 5: مانع الطريق -->
+      <div class="service-card reveal delay-5">
+        <div class="service-img-placeholder">
+          <img class="service-img" loading="lazy" decoding="async" src="Image/service-security-barrier.webp" alt="مانع الطريق">
+        </div>
+        <div class="service-body">
+          <span class="service-tag"><i class="fas fa-lock"></i> أمان المدخل</span>
+          <h3 class="service-name">مانع الطريق</h3>
+          <p class="service-desc">أنظمة منع الدخول الهيدروليكية للمناطق ذات الأمان العالي. حلول احترافية متكاملة.</p>
+          <a href="#contact" class="service-link">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+      <!-- Service 6: حاجز -->
+      <div class="service-card reveal delay-6">
+        <div class="service-img-placeholder">
+          <img class="service-img" loading="lazy" decoding="async" src="Image/product-barrier-arm.webp" alt="حاجز">
+        </div>
+        <div class="service-body">
+          <span class="service-tag"><i class="fas fa-car"></i> تنظيم المرور</span>
+          <h3 class="service-name">حاجز أوتوماتيكي</h3>
+          <p class="service-desc">بوابات حاجزة لمواقف السيارات والمجمعات. تحكم ذكي وتشغيل بلا أعطال.</p>
+          <a href="#contact" class="service-link">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+      </div>
+
+    </div><!-- /services-grid -->
+  </div>
+</section>
+
+<!-- ==========================================
+     5. PORTFOLIO
+     ========================================== -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-images"></i> معرض الأعمال</span>
+      <h2 class="section-title">مشاريعنا <span>تتحدث عنا</span></h2>
+      <p class="section-sub">نماذج من أعمالنا الحقيقية — كل مشروع قصة نجاح وثقة مكتسبة</p>
+    </div>
+
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" type="button" data-filter="all">الكل</button>
+      <button class="filter-btn" type="button" data-filter="residential">سكني</button>
+      <button class="filter-btn" type="button" data-filter="commercial">تجاري</button>
+      <button class="filter-btn" type="button" data-filter="industrial">صناعي</button>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- Featured Large -->
+      <div class="p-item reveal delay-1" data-category="commercial">
+        <div class="p-img-placeholder">
+          <img loading="lazy" decoding="async" src="Image/project-retail-shutter.webp" alt="مشروع مركز تجاري في جدة">
+        </div>
+        <div class="p-play-btn"><i class="fas fa-expand"></i></div>
+        <div class="p-overlay">
+          <div class="p-title">مشروع مركز تجاري — جدة</div>
+          <div class="p-cat">شاش فولاذي + أبواب أوتوماتيكية</div>
+        </div>
+      </div>
+
+      <!-- Grid items -->
+      <div class="p-item reveal delay-2" data-category="residential">
+        <div class="p-img-placeholder">
+          <img loading="lazy" decoding="async" src="Image/project-residential-garage.webp" alt="مشروع فيلا سكنية في الرياض">
+        </div>
+        <div class="p-play-btn"><i class="fas fa-expand"></i></div>
+        <div class="p-overlay">
+          <div class="p-title">فيلا سكنية — الرياض</div>
+          <div class="p-cat">بوابة أوتوماتيكية</div>
+        </div>
+      </div>
+
+      <div class="p-item reveal delay-3" data-category="industrial">
+        <div class="p-img-placeholder">
+          <img loading="lazy" decoding="async" src="Image/project-industrial-barrier.webp" alt="مشروع مستودع صناعي في مكة">
+        </div>
+        <div class="p-play-btn"><i class="fas fa-expand"></i></div>
+        <div class="p-overlay">
+          <div class="p-title">مستودع صناعي — مكة</div>
+          <div class="p-cat">شاش فولاذية ثقيلة</div>
+        </div>
+      </div>
+
+      <div class="p-item reveal delay-4" data-category="commercial">
+        <div class="p-img-placeholder">
+          <img loading="lazy" decoding="async" src="Image/service-sliding-door.webp" alt="مشروع مدخل تجاري أوتوماتيكي">
+        </div>
+        <div class="p-play-btn"><i class="fas fa-expand"></i></div>
+        <div class="p-overlay">
+          <div class="p-title">مجمع تجاري — الرياض</div>
+          <div class="p-cat">أبواب انزلاقية</div>
+        </div>
+      </div>
+
+      <div class="p-item reveal delay-5" data-category="industrial">
+        <div class="p-img-placeholder">
+          <img loading="lazy" decoding="async" src="Image/service-security-barrier.webp" alt="مشروع مانع طريق هيدروليكي">
+        </div>
+        <div class="p-play-btn"><i class="fas fa-expand"></i></div>
+        <div class="p-overlay">
+          <div class="p-title">مبنى حكومي — جدة</div>
+          <div class="p-cat">مانع طريق هيدروليكي</div>
+        </div>
+      </div>
+
+    </div><!-- /portfolio-grid -->
+  </div>
+</section>
+
+<!-- ==========================================
+     6. WHY KHALIFA
+     ========================================== -->
+<section id="why-us">
+  <div class="container">
+    <div class="why-inner">
+
+      <!-- Visual -->
+      <div class="why-visual reveal-left">
+        <div class="why-deco-ring"></div>
+        <div class="why-deco-ring-2"></div>
+        <div class="why-img-card">
+          <img class="real-why-img" loading="lazy" decoding="async" src="Image/faq-technical-support.webp" alt="فريق خليفة الشرق الأوسط">
+        </div>
+        <div class="why-stat-card">
+          <div class="wsc-icon"><i class="fas fa-star"></i></div>
+          <div class="wsc-text">
+            <div class="num">4.9/5</div>
+            <div class="lbl">تقييم العملاء على Google</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="why-content reveal-right">
+        <span class="section-badge" style="background:rgba(74,175,255,0.1); border-color:rgba(74,175,255,0.25); color:var(--blue-glow);">
+          <i class="fas fa-medal"></i> لماذا خليفة؟
+        </span>
+        <h2 class="section-title">نقاط التميز التي <span>تميزنا</span></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.6);">
+          في خليفة الشرق الأوسط لا نركب فقط — بل نُبدع في تقديم حلول صناعية مبتكرة تجمع بين الحماية والموثوقية والتصميم العصري.
+        </p>
+
+        <div class="why-features">
+          <div class="feature-card reveal delay-1">
+            <i class="fas fa-shield-halved"></i>
+            <h4>ضمان 10 سنوات</h4>
+            <p>ضمان موثّق مكتوب على جميع التركيبات مع صيانة دورية مجانية</p>
+          </div>
+          <div class="feature-card reveal delay-2">
+            <i class="fas fa-bolt"></i>
+            <h4>تركيب خلال 6 أيام</h4>
+            <p>فريق متخصص يلتزم بمواعيد التسليم دون تأخير</p>
+          </div>
+          <div class="feature-card reveal delay-3">
+            <i class="fas fa-medal"></i>
+            <h4>جودة ألمانية مُعتمدة</h4>
+            <p>مواد أولية بمعايير دولية عالية مع اعتمادات جودة موثقة</p>
+          </div>
+          <div class="feature-card reveal delay-4">
+            <i class="fas fa-headset"></i>
+            <h4>دعم فني 24/7</h4>
+            <p>فريق الدعم الفني متاح على مدار الساعة لأي طارئ</p>
+          </div>
+          <div class="feature-card reveal delay-5">
+            <i class="fas fa-globe"></i>
+            <h4>خبرة 25+ عاماً</h4>
+            <p>انطلقنا من عُمان وتوسعنا لدبي والمملكة العربية السعودية</p>
+          </div>
+          <div class="feature-card reveal delay-6">
+            <i class="fas fa-tags"></i>
+            <h4>أسعار تنافسية</h4>
+            <p>عروض أسعار مجانية بدون التزام — شفافية كاملة في التسعير</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     7. COMMITMENT (Compact)
+     ========================================== -->
+<section id="commitment">
+  <div class="container">
+    <div class="commitment-inner">
+      <div class="commitment-text reveal-right">
+        <span class="section-badge"><i class="fas fa-award"></i> التزامنا بالتميز</span>
+        <h2 class="section-title">كل تركيب <span>قصة نجاح</span></h2>
+        <p class="section-sub">
+          نجسد التفاني الراسخ نحو التميز في تركيب الأبواب والنوافذ المعدنية بأعلى معايير الجودة والاحترافية — رضاكم هو جوهر رؤيتنا.
+        </p>
+        <div class="commitment-points">
+          <div class="cp-item">
+            <div class="cp-icon"><i class="fas fa-drafting-compass"></i></div>
+            <div class="cp-text">
+              <h4>استشارة هندسية مجانية</h4>
+              <p>نبدأ بدراسة موقعك ومتطلباتك لنقدم الحل الأمثل</p>
+            </div>
+          </div>
+          <div class="cp-item">
+            <div class="cp-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+            <div class="cp-text">
+              <h4>تركيب احترافي دقيق</h4>
+              <p>فنيون متخصصون بخبرة عملية في كل أنواع التركيبات</p>
+            </div>
+          </div>
+          <div class="cp-item">
+            <div class="cp-icon"><i class="fas fa-rotate"></i></div>
+            <div class="cp-text">
+              <h4>صيانة دورية مستمرة</h4>
+              <p>برنامج صيانة متكامل لضمان الأداء على المدى الطويل</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="#portfolio" class="btn-primary">
+            <i class="fas fa-images"></i>
+            شاهد أعمالنا
+          </a>
+        </div>
+      </div>
+
+      <div class="commitment-visual reveal-left">
+        <div class="commitment-img">
+          <img class="real-commitment-img" loading="lazy" decoding="async" src="Image/excellence-industrial-team.webp" alt="فريق تركيب خليفة الشرق الأوسط">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     8. CTA BANNER
+     ========================================== -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text reveal-right">
+        <h2>احصل على عرض سعر مجاني <br>الآن — تواصل معنا واتساب</h2>
+        <p>فريقنا جاهز للرد خلال 24 ساعة وتقديم حل مخصص لاحتياجاتك</p>
+        <div class="free-tag">
+          <i class="fas fa-check-circle"></i>
+          عرض سعر مجاني · بدون التزام · استشارة هندسية
+        </div>
+      </div>
+      <div class="cta-actions reveal-left">
+        <a href="https://wa.me/966552543409" class="btn-cta-wa" target="_blank">
+          <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+          تواصل عبر واتساب
+        </a>
+        <a href="tel:+966552543409" class="btn-cta-call">
+          <i class="fas fa-phone"></i>
+          اتصل بنا مباشرة
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     9. REVIEWS
+     ========================================== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-star"></i> تقييمات Google</span>
+      <h2 class="section-title">ماذا يقول <span>عملاؤنا</span></h2>
+      <p class="section-sub">آراء حقيقية من عملاء حقيقيين — نفخر بثقتهم ورضاهم</p>
+    </div>
+  </div>
+  <div class="reviews-track-wrap">
+    <div class="reviews-track" id="reviewsTrack">
+
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"خدمة ممتازة وتركيب احترافي. الشتر الفولاذي جاء بجودة عالية جداً والتركيب كان سريع ونظيف. أنصح الجميع بخليفة الشرق الأوسط."</p>
+        <div class="review-author">
+          <div class="review-avatar a1">أح</div>
+          <div>
+            <div class="review-name">أحمد الشمري</div>
+            <div class="review-location">جدة، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"ركبوا لي باب كراج أوتوماتيكي في وقت قصير جداً وبسعر منافس. الضمان مكتوب وموثق وده أهم شيء. شكراً للفريق المحترف."</p>
+        <div class="review-author">
+          <div class="review-avatar a2">مس</div>
+          <div>
+            <div class="review-name">محمد السعيدي</div>
+            <div class="review-location">الرياض، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <p class="review-text">"مشروع كبير في مجمعنا التجاري — 20 شتراً فولاذياً. العمل كان دقيقاً والتسليم في الموعد. ممتازين حقيقي والفريق محترم."</p>
+        <div class="review-author">
+          <div class="review-avatar a3">فع</div>
+          <div>
+            <div class="review-name">فارس العتيبي</div>
+            <div class="review-location">مكة المكرمة، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"تركيب شبابيك شتر لفيلا كاملة — النتيجة رائعة. عزل حراري ممتاز وشكل جمالي جميل. سعر عادل جداً مقارنة بالجودة."</p>
+        <div class="review-author">
+          <div class="review-avatar a4">نب</div>
+          <div>
+            <div class="review-name">نورة البلوي</div>
+            <div class="review-location">جدة، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"الاستشارة الهندسية المجانية كانت ممتازة — ساعدوني اختار المنتج الصح لاحتياجي. التركيب احترافي والتعامل كان محترم."</p>
+        <div class="review-author">
+          <div class="review-avatar a5">خم</div>
+          <div>
+            <div class="review-name">خالد المطيري</div>
+            <div class="review-location">الرياض، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"منذ 3 سنوات وأنا عميل خليفة — صيانة دورية منتظمة وخدمة ما بعد البيع ممتازة. هذا ما يميزهم عن غيرهم."</p>
+        <div class="review-author">
+          <div class="review-avatar a6">سح</div>
+          <div>
+            <div class="review-name">سلطان الحربي</div>
+            <div class="review-location">مكة المكرمة، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+      <!-- Duplicate for seamless scroll -->
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"خدمة ممتازة وتركيب احترافي. الشتر الفولاذي جاء بجودة عالية جداً والتركيب كان سريع ونظيف. أنصح الجميع بخليفة الشرق الأوسط."</p>
+        <div class="review-author">
+          <div class="review-avatar a1">أح</div>
+          <div>
+            <div class="review-name">أحمد الشمري</div>
+            <div class="review-location">جدة، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"ركبوا لي باب كراج أوتوماتيكي في وقت قصير جداً وبسعر منافس. الضمان مكتوب وموثق وده أهم شيء."</p>
+        <div class="review-author">
+          <div class="review-avatar a2">مس</div>
+          <div>
+            <div class="review-name">محمد السعيدي</div>
+            <div class="review-location">الرياض، المملكة العربية السعودية</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <p class="review-text">"مشروع كبير في مجمعنا التجاري — 20 شتراً فولاذياً. العمل كان دقيقاً والتسليم في الموعد."</p>
+        <div class="review-author">
+          <div class="review-avatar a3">فع</div>
+          <div>
+            <div class="review-name">فارس العتيبي</div>
+            <div class="review-location">مكة المكرمة</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text">"منذ 3 سنوات وأنا عميل خليفة — صيانة دورية منتظمة وخدمة ما بعد البيع ممتازة."</p>
+        <div class="review-author">
+          <div class="review-avatar a6">سح</div>
+          <div>
+            <div class="review-name">سلطان الحربي</div>
+            <div class="review-location">مكة المكرمة</div>
+          </div>
+          <div class="review-google"><i class="fab fa-google"></i> Google</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     10. FAQ
+     ========================================== -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+
+      <div class="faq-aside reveal-right">
+        <span class="section-badge"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</span>
+        <h2 class="section-title">أسئلة يسألها <span>كثيراً</span></h2>
+        <p class="section-sub">وجدت إجابتك؟ تواصل معنا مباشرة وفريقنا سيساعدك فوراً.</p>
+
+        <div class="faq-contact-box">
+          <h4><i class="fab fa-whatsapp" style="margin-left:6px;"></i> تواصل مباشرة</h4>
+          <p>هل لديك سؤال لم تجد إجابته؟ راسلنا على واتساب وسنرد خلال دقائق!</p>
+          <button class="faq-wa-btn" onclick="window.open('https://wa.me/966552543409','_blank')">
+            <i class="fab fa-whatsapp"></i>
+            ابدأ المحادثة الآن
+          </button>
+        </div>
+      </div>
+
+      <div class="faq-list reveal-left">
+
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">ما أنواع الأبواب والنوافذ التي تقدمونها؟</span>
+            <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              نقدم مجموعة شاملة تشمل: الأبواب الأوتوماتيكية الانزلاقية والكراج، الشاش الفولاذية والمتدرجة، شبابيك الشتر الألمنيوم، مانعات الطريق الهيدروليكية، والحواجز الأوتوماتيكية. جميعها بضمان موثق ومواد أولية عالية الجودة.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">هل تقدمون ضمان وصيانة بعد التركيب؟</span>
+            <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              نعم، نقدم ضمانًا يصل إلى 10 سنوات على جميع التركيبات، مع خدمة صيانة دورية مجانية. الضمان مكتوب وموثق رسمياً لضمان استمرارية الأداء الأمثل.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">كم يستغرق التركيب عادةً؟</span>
+            <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              تتم معظم التركيبات خلال 6 أيام عمل من تاريخ الموافقة على التصميم والمواصفات. نلتزم بالمواعيد المحددة مع الحفاظ على أعلى معايير الجودة.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">هل تخدمون جدة والمناطق المجاورة؟</span>
+            <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              نعم، نخدم جدة، مكة المكرمة، الرياض، وجميع مناطق المملكة العربية السعودية. لدينا فرق عمل متنقلة جاهزة للوصول إليكم في أسرع وقت.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">ما مميزات نوافذ وأبواب الشتر لديكم؟</span>
+            <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              شتراتنا مصنوعة من ألمنيوم عالي الجودة مع عزل حراري وصوتي ممتاز. تتميز بسهولة التشغيل (يدوي أو أوتوماتيكي)، قوة تحمل عالية، ومقاومة للعوامل الجوية القاسية في المملكة.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-more-btn" onclick="window.location.href='#contact'">
+          <i class="fas fa-plus-circle"></i>
+          هل لديك سؤال آخر؟ تواصل معنا
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     11. CONTACT
+     ========================================== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-envelope"></i> اتصل بنا</span>
+      <h2 class="section-title">نحن هنا <span>لمساعدتك</span></h2>
+      <p class="section-sub">تواصل معنا اليوم واحصل على استشارة مجانية وعرض سعر بدون التزام</p>
+    </div>
+
+    <div class="contact-inner">
+
+      <div class="contact-info reveal-right">
+        <h2>تواصل مع <span style="color:var(--blue-main);">فريقنا</span></h2>
+        <p>فريق المبيعات جاهز للرد على استفساراتكم وتقديم أفضل الحلول المناسبة لاحتياجاتكم.</p>
+
+        <div class="contact-items">
+          <a href="tel:+966552543409" class="contact-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">الهاتف</div>
+              <div class="ci-value" style="direction:ltr;">0552543409</div>
+            </div>
+          </a>
+          <a href="https://wa.me/966552543409" class="contact-item" target="_blank">
+            <div class="ci-icon green"><i class="fab fa-whatsapp"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">واتساب</div>
+              <div class="ci-value">تواصل فوري — نرد خلال دقائق</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="ci-text">
+              <div class="ci-label">المنطقة</div>
+              <div class="ci-value">جدة · مكة المكرمة · الرياض</div>
+            </div>
+          </div>
+        </div>
+
+        <img class="contact-map-img" src="Image/contact-map.webp" alt="خريطة مناطق خدمة خليفة الشرق الأوسط" loading="lazy" decoding="async" onclick="window.open('https://maps.google.com','_blank')">
+      </div>
+
+      <div class="reveal-left">
+        <div class="contact-form-card">
+          <h3>📋 أرسل طلبك الآن</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>الاسم الكريم</label>
+              <input type="text" placeholder="اسمك الكامل">
+            </div>
+            <div class="form-group">
+              <label>رقم الجوال</label>
+              <input type="tel" placeholder="05XXXXXXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label>نوع الخدمة المطلوبة</label>
+            <select>
+              <option value="">اختر الخدمة...</option>
+              <option>أبواب أوتوماتيكية</option>
+              <option>الشاش الفولاذية</option>
+              <option>الشاش المتدرج</option>
+              <option>شباك شتر</option>
+              <option>مانع الطريق</option>
+              <option>حاجز أوتوماتيكي</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>تفاصيل طلبك</label>
+            <textarea placeholder="اكتب تفاصيل مشروعك وأي معلومات مفيدة..."></textarea>
+          </div>
+          <button class="form-submit" type="button">
+            <i class="fas fa-paper-plane"></i>
+            إرسال الطلب
+          </button>
+          <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:12px;">
+            <i class="fas fa-lock" style="margin-left:4px;"></i>
+            معلوماتك آمنة ومحمية — لن تُشارك مع أي طرف ثالث
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     12. FOOTER
+     ========================================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img class="footer-logo-img" loading="lazy" decoding="async" src="Image/logo.webp" alt="خليفة الشرق الأوسط"><div class="footer-logo-text">خليفة الشرق الأوسط<span>Khalifa Middle East</span></div>
+        </div>
+        <p>
+          رواد تركيب الأبواب الأوتوماتيكية ونوافذ الشتر الألمنيوم في المملكة العربية السعودية. 
+          خبرة تتجاوز 25 عاماً بمعايير جودة دولية عالية.
+        </p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+          <a class="social-btn" href="#" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+          <a class="social-btn" href="#" target="_blank" aria-label="تويتر"><i class="fab fa-x-twitter"></i></a>
+          <a class="social-btn" href="#" target="_blank" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+          <a class="social-btn" href="#" target="_blank" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>خدماتنا</h4>
+        <ul>
+          <li><a href="#services">أبواب أوتوماتيكية</a></li>
+          <li><a href="#services">الشاش الفولاذية</a></li>
+          <li><a href="#services">الشاش المتدرج</a></li>
+          <li><a href="#services">شباك شتر</a></li>
+          <li><a href="#services">مانع الطريق</a></li>
+          <li><a href="#services">حاجز أوتوماتيكي</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#portfolio">معرض الأعمال</a></li>
+          <li><a href="#why-us">لماذا خليفة؟</a></li>
+          <li><a href="#reviews">تقييمات العملاء</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>
+            <a href="tel:+966552543409">
+              <i class="fas fa-phone" style="color:var(--blue-main);"></i>
+              <span style="direction:ltr;display:inline-block;">0552543409</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/966552543409" target="_blank">
+              <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+              واتساب — رد فوري
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-location-dot" style="color:var(--blue-main);"></i>
+              جدة، المملكة العربية السعودية
+            </a>
+          </li>
+        </ul>
+        <div class="footer-map" style="margin-top:16px;" onclick="window.open('https://maps.google.com','_blank')">
+          <i class="fas fa-map-location-dot"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 خليفة الشرق الأوسط — جميع الحقوق محفوظة</p>
+      <div class="footer-bottom-links">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">الشروط والأحكام</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+<script>
+
+/* ---- Dark mode toggle ---- */
+const themeToggle = document.getElementById('themeToggle');
+function applyTheme(mode) {
+  document.body.classList.toggle('dark-mode', mode === 'dark');
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+    themeToggle.innerHTML = mode === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  }
+  try { localStorage.setItem('khalifa-theme-v2', mode); } catch(e) {}
+}
+let savedTheme = 'light';
+try { savedTheme = localStorage.getItem('khalifa-theme-v2') || 'light'; } catch(e) {}
+applyTheme(savedTheme);
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    applyTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
+  });
+}
+/* ---- Navbar scroll effect ---- */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+/* ---- Mobile nav ---- */
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+document.getElementById('mobileNav').addEventListener('click', function(e) {
+  if (e.target === this) closeMobileNav();
+});
+
+/* ---- Active nav link on scroll ---- */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.navbar-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+/* ---- Scroll reveal ---- */
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+/* ---- Counter animation ---- */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1800;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = Math.floor(current);
+    if (current >= target) clearInterval(timer);
+  }, 16);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.count-up').forEach(el => counterObserver.observe(el));
+
+/* ---- FAQ accordion ---- */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  // Open clicked if it was closed
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ---- Portfolio filters ---- */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const filter = this.dataset.filter || 'all';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.p-item[data-category]').forEach(item => {
+      const visible = filter === 'all' || item.dataset.category === filter;
+      item.classList.toggle('is-hidden', !visible);
+    });
+  });
+});
+
+/* ---- Smooth scroll for anchor links ---- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      closeMobileNav();
+      const offset = navbar.offsetHeight;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    }
+  });
+});
+
+/* ---- Form submit feedback ---- */
+const formBtn = document.querySelector('.form-submit');
+const toast = document.createElement('div');
+toast.className = 'status-toast';
+toast.textContent = 'تم تجهيز طلبك. يمكنك التواصل عبر واتساب لإرساله فورًا.';
+document.body.appendChild(toast);
+if (formBtn) {
+  formBtn.addEventListener('click', function() {
+    const original = this.innerHTML;
+    this.innerHTML = '<i class="fas fa-check-circle"></i> تم تجهيز الطلب';
+    this.style.background = 'var(--success)';
+    toast.classList.add('show');
+    setTimeout(() => {
+      this.innerHTML = original;
+      this.style.background = '';
+      toast.classList.remove('show');
+    }, 3000);
+  });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
